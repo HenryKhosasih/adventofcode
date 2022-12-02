@@ -108,8 +108,14 @@ const strategyData = await loadStrategyData();
 
 // quest 1
 const myScoreBeforeEnlightment = calculateScoreBeforeEnlightment(strategyData);
-console.log(myScoreBeforeEnlightment);
+console.log(
+	`If you follow this strategy, you'll get a total score of ${myScoreBeforeEnlightment}`
+);
+
+console.log("Uh oh... The game rules have changed!");
 
 // quest 2
 const myScoreAfterEnlightment = calculateScoreAfterEnlightment(strategyData);
-console.log(myScoreAfterEnlightment);
+console.log(
+	`If you follow this strategy, you'll get a total score of ${myScoreAfterEnlightment}`
+);
