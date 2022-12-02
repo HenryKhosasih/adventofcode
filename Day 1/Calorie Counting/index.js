@@ -1,7 +1,5 @@
 import { readFile } from "node:fs/promises";
 
-// Read and store
-
 async function loadCaloriesData() {
 	try {
 		const filePath = new URL("./data.txt", import.meta.url);
@@ -11,7 +9,6 @@ async function loadCaloriesData() {
 	}
 }
 
-// Accumulate
 function accumulateCaloriesByElves(caloriesData) {
 	const caloriesArray = caloriesData.split("\r\n");
 
