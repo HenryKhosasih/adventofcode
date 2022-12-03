@@ -1,0 +1,14 @@
+{
+  "name": "rucksack-reorganization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node quest1.js && node quest2.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Henry Laurent Khosasih",
+  "license": "ISC"
+}
