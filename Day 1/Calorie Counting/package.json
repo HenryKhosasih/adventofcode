@@ -9,6 +9,7 @@
   },
   "type": "module",
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Henry Laurent Khosasih",
+  "license": "ISC",
+  "challenge": "https://adventofcode.com/2022/day/1"
 }
