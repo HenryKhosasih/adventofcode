@@ -9,29 +9,19 @@ async function loadSignalData() {
 	}
 }
 
-function findPacketMarker(signalData) {
+function findMarker(signalData, distinctChar) {
 	const signalArray = signalData.split("");
 	for (let i = 0; i < signalArray.length; i++) {
-		const packet = signalArray.slice(i, i + 4);
-		const nonDuplicatePacket = new Set(packet);
-
-		if (nonDuplicatePacket.size === 4) return i + 4;
-	}
-}
-
-function findMessageMarker(signalData) {
-	const signalArray = signalData.split("");
-	for (let i = 0; i < signalArray.length; i++) {
-		const message = signalArray.slice(i, i + 14);
+		const message = signalArray.slice(i, i + distinctChar);
 		const nonDuplicateMessage = new Set(message);
 
-		if (nonDuplicateMessage.size === 14) return i + 14;
+		if (nonDuplicateMessage.size === distinctChar) return i + distinctChar;
 	}
 }
 
 const signalData = await loadSignalData();
-const packetMarker = findPacketMarker(signalData);
-const messageMarker = findMessageMarker(signalData);
+const packetMarker = findMarker(signalData, 4);
+const messageMarker = findMarker(signalData, 14);
 console.log(
 	`A valid packet is detected after scanning through ${packetMarker} signal bits`
 );
