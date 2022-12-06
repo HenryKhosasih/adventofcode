@@ -12,10 +12,10 @@ async function loadSignalData() {
 function findMarker(signalData, distinctChar) {
 	const signalArray = signalData.split("");
 	for (let i = 0; i < signalArray.length; i++) {
-		const message = signalArray.slice(i, i + distinctChar);
-		const nonDuplicateMessage = new Set(message);
+		const chunk = signalArray.slice(i, i + distinctChar);
+		const nonDuplicateChunk = new Set(chunk);
 
-		if (nonDuplicateMessage.size === distinctChar) return i + distinctChar;
+		if (nonDuplicateChunk.size === distinctChar) return i + distinctChar;
 	}
 }
 
