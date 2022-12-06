@@ -1,5 +1,8 @@
 import { readFile } from "node:fs/promises";
 
+const PACKET_CHAR = 4;
+const MESSAAGE_CHAR = 14;
+
 async function loadSignalData() {
 	try {
 		const filePath = new URL("./data.txt", import.meta.url);
@@ -20,8 +23,8 @@ function findMarker(signalData, distinctChar) {
 }
 
 const signalData = await loadSignalData();
-const packetMarker = findMarker(signalData, 4);
-const messageMarker = findMarker(signalData, 14);
+const packetMarker = findMarker(signalData, PACKET_CHAR);
+const messageMarker = findMarker(signalData, MESSAAGE_CHAR);
 console.log(
 	`A valid packet is detected after scanning through ${packetMarker} signal bits`
 );
